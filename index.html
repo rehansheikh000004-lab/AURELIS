@@ -12,35 +12,44 @@
 
     <meta
         name="description"
-        content="AURELIS — Private residences and extraordinary architecture."
+        content="AURELIS — Private residences shaped by architecture, craftsmanship and timeless design."
     >
 
     <title>AURELIS — Private Residences</title>
 
     <!-- Google Fonts -->
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
 
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
 
     <link
         href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
         rel="stylesheet"
     >
 
-    <!-- Stylesheet -->
-
-    <link rel="stylesheet" href="style.css">
+    <!-- Main CSS -->
+    <link
+        rel="stylesheet"
+        href="./style.css"
+    >
 
 </head>
 
+
 <body>
 
-    <!-- =========================
+    <!-- =================================
          LOADER
-    ========================== -->
+    ================================== -->
 
-    <div class="loader" id="loader">
+    <div
+        class="loader"
+        id="loader"
+    >
 
         <div class="loader-brand">
             AURELIS
@@ -57,28 +66,38 @@
     </div>
 
 
-    <!-- =========================
-         NAVIGATION
-    ========================== -->
+    <!-- =================================
+         HEADER
+    ================================== -->
 
-    <header class="site-header" id="siteHeader">
+    <header
+        class="site-header"
+        id="siteHeader"
+    >
 
-        <a href="#home" class="brand">
+        <a
+            href="#home"
+            class="brand"
+        >
             AURELIS
         </a>
 
-        <nav class="main-nav" id="mainNav">
+
+        <nav
+            class="main-nav"
+            id="mainNav"
+        >
 
             <a href="#home">
                 Home
             </a>
 
-            <a href="#residences">
-                Residences
-            </a>
-
             <a href="#philosophy">
                 Philosophy
+            </a>
+
+            <a href="#residences">
+                Residences
             </a>
 
             <a href="#gallery">
@@ -91,19 +110,26 @@
 
         </nav>
 
-        <a href="#viewing" class="nav-cta">
+
+        <a
+            href="#contact"
+            class="nav-cta"
+        >
             Private Viewing
         </a>
+
 
         <button
             class="menu-toggle"
             id="menuToggle"
             type="button"
-            aria-label="Open navigation"
+            aria-label="Open menu"
             aria-expanded="false"
         >
+
             <span></span>
             <span></span>
+
         </button>
 
     </header>
@@ -111,110 +137,140 @@
 
     <main>
 
-        <!-- =========================
+        <!-- =================================
              HERO
-        ========================== -->
+        ================================== -->
 
-        <section class="hero" id="home">
+        <section
+            class="hero"
+            id="home"
+        >
 
-            <div class="hero-image">
+            <div class="hero-background">
 
-                <img
-                    src="images/hero.jpg"
-                    alt="Luxury architectural residence"
-                >
+                <div class="hero-orb orb-one"></div>
+
+                <div class="hero-orb orb-two"></div>
+
+                <div class="architecture architecture-one"></div>
+
+                <div class="architecture architecture-two"></div>
+
+                <div class="architecture architecture-three"></div>
 
             </div>
 
+
             <div class="hero-overlay"></div>
+
 
             <div class="hero-content">
 
                 <p class="eyebrow">
-                    PRIVATE RESIDENCES
+                    EST. 2026 · CURATED LIVING
                 </p>
+
 
                 <h1>
                     Where Architecture
                     <br>
-                    Becomes a Lifestyle.
+                    Becomes a
+                    <em>Lifestyle.</em>
                 </h1>
+
 
                 <p class="hero-description">
 
-                    A curated collection of extraordinary residences
-                    shaped by architecture, craftsmanship and timeless design.
+                    A curated collection of extraordinary
+                    residences shaped by architecture,
+                    craftsmanship and timeless design.
 
                 </p>
 
+
                 <div class="hero-actions">
 
-                    <a href="#residences" class="button button-light">
+                    <a
+                        href="#residences"
+                        class="button button-light"
+                    >
                         Explore Residences
                     </a>
 
-                    <a href="#philosophy" class="text-link">
+
+                    <a
+                        href="#philosophy"
+                        class="text-link"
+                    >
+
                         Discover AURELIS
-                        <span>↘</span>
+
+                        <span>
+                            ↗
+                        </span>
+
                     </a>
 
                 </div>
 
             </div>
 
-            <div class="hero-meta">
 
-                <span>
-                    EST. 2026
-                </span>
-
-                <span>
-                    CURATED LIVING
-                </span>
-
-            </div>
-
-            <a href="#residences" class="scroll-indicator">
+            <div class="hero-bottom">
 
                 <span>
                     SCROLL TO DISCOVER
                 </span>
 
-                <strong>
+                <span class="scroll-arrow">
                     ↓
-                </strong>
+                </span>
 
-            </a>
+            </div>
+
+
+            <div class="hero-side">
+                01 / THE COLLECTION
+            </div>
 
         </section>
 
 
-        <!-- =========================
+        <!-- =================================
              INTRO
-        ========================== -->
+        ================================== -->
 
-        <section class="intro">
+        <section
+            class="intro reveal"
+            id="philosophy"
+        >
 
             <div class="intro-label">
-                01 / THE COLLECTION
+                A NEW STANDARD
+                <br>
+                OF LIVING
             </div>
+
 
             <div class="intro-content">
 
                 <p class="eyebrow">
-                    A NEW STANDARD OF LIVING
+                    THE AURELIS PHILOSOPHY
                 </p>
+
 
                 <h2>
                     Not simply a residence.
                     <em>A statement.</em>
                 </h2>
 
+
                 <p class="intro-text">
 
-                    AURELIS brings together exceptional homes,
-                    remarkable architecture and considered interiors
-                    for people who believe where you live should reflect
+                    AURELIS brings together exceptional
+                    homes, remarkable architecture and
+                    considered interiors for people who
+                    believe where you live should reflect
                     how you live.
 
                 </p>
@@ -224,13 +280,16 @@
         </section>
 
 
-        <!-- =========================
+        <!-- =================================
              RESIDENCES
-        ========================== -->
+        ================================== -->
 
-        <section class="residences" id="residences">
+        <section
+            class="residences"
+            id="residences"
+        >
 
-            <div class="section-heading">
+            <div class="section-heading reveal">
 
                 <div>
 
@@ -239,14 +298,25 @@
                     </p>
 
                     <h2>
-                        Selected Residences
+                        Selected
+                        <br>
+                        Residences
                     </h2>
 
                 </div>
 
-                <a href="#" class="text-link dark-link">
+
+                <a
+                    href="#contact"
+                    class="text-link dark-link"
+                >
+
                     View All Residences
-                    <span>↗</span>
+
+                    <span>
+                        ↗
+                    </span>
+
                 </a>
 
             </div>
@@ -254,19 +324,24 @@
 
             <div class="residence-grid">
 
+
                 <!-- Residence 01 -->
 
-                <article class="residence-card residence-large">
+                <article
+                    class="residence-card residence-large reveal"
+                >
 
-                    <a href="#" class="residence-image">
-
-                        <img
-                            src="images/residence1.jpg"
-                            alt="Modern luxury villa"
-                        >
+                    <a
+                        href="#contact"
+                        class="residence-visual visual-one"
+                    >
 
                         <span class="card-number">
                             01
+                        </span>
+
+                        <span class="visual-label">
+                            AURELIS COLLECTION
                         </span>
 
                         <span class="card-arrow">
@@ -274,6 +349,7 @@
                         </span>
 
                     </a>
+
 
                     <div class="residence-info">
 
@@ -288,6 +364,7 @@
                             </h3>
 
                         </div>
+
 
                         <div class="residence-details">
 
@@ -312,17 +389,21 @@
 
                 <!-- Residence 02 -->
 
-                <article class="residence-card">
+                <article
+                    class="residence-card reveal"
+                >
 
-                    <a href="#" class="residence-image">
-
-                        <img
-                            src="images/residence2.jpg"
-                            alt="Contemporary luxury residence"
-                        >
+                    <a
+                        href="#contact"
+                        class="residence-visual visual-two"
+                    >
 
                         <span class="card-number">
                             02
+                        </span>
+
+                        <span class="visual-label">
+                            PRIVATE COLLECTION
                         </span>
 
                         <span class="card-arrow">
@@ -330,6 +411,7 @@
                         </span>
 
                     </a>
+
 
                     <div class="residence-info">
 
@@ -340,10 +422,11 @@
                             </p>
 
                             <h3>
-                                Villa Solara
+                                Villa Solenne
                             </h3>
 
                         </div>
+
 
                         <div class="residence-details">
 
@@ -364,17 +447,21 @@
 
                 <!-- Residence 03 -->
 
-                <article class="residence-card">
+                <article
+                    class="residence-card reveal"
+                >
 
-                    <a href="#" class="residence-image">
-
-                        <img
-                            src="images/residence3.jpg"
-                            alt="Luxury penthouse"
-                        >
+                    <a
+                        href="#contact"
+                        class="residence-visual visual-three"
+                    >
 
                         <span class="card-number">
                             03
+                        </span>
+
+                        <span class="visual-label">
+                            URBAN COLLECTION
                         </span>
 
                         <span class="card-arrow">
@@ -383,28 +470,30 @@
 
                     </a>
 
+
                     <div class="residence-info">
 
                         <div>
 
                             <p class="location">
-                                MUMBAI · INDIA
+                                MUMBAI · MAHARASHTRA
                             </p>
 
                             <h3>
-                                The Aurelis Penthouse
+                                Maison No. 07
                             </h3>
 
                         </div>
 
+
                         <div class="residence-details">
 
                             <span>
-                                4 BED
+                                3 BED
                             </span>
 
                             <span>
-                                5,200 SQ FT
+                                4 BATH
                             </span>
 
                         </div>
@@ -418,38 +507,46 @@
         </section>
 
 
-        <!-- =========================
+        <!-- =================================
              PHILOSOPHY
-        ========================== -->
+        ================================== -->
 
-        <section class="philosophy" id="philosophy">
+        <section class="philosophy">
 
             <div class="philosophy-number">
-                02
+                02 / THE PHILOSOPHY
             </div>
 
-            <div class="philosophy-content">
+
+            <div class="philosophy-content reveal">
 
                 <p class="eyebrow">
-                    OUR PHILOSOPHY
+                    BEYOND THE ORDINARY
                 </p>
 
+
                 <h2>
-                    Designed for
-                    <em>those who notice</em>
-                    the difference.
+                    Designed
+                    <br>
+                    for those who
+                    <em>expect more.</em>
                 </h2>
+
 
                 <p>
 
-                    From the first architectural line to the final
-                    material detail, every AURELIS residence is chosen
-                    for its ability to create a distinctive way of living.
+                    Every AURELIS residence is defined
+                    by proportion, materiality, light and
+                    an uncompromising attention to detail.
 
                 </p>
 
-                <a href="#gallery" class="button button-dark">
-                    Explore Our Vision
+
+                <a
+                    href="#contact"
+                    class="button button-light"
+                >
+                    Discover Our Vision
                 </a>
 
             </div>
@@ -457,56 +554,59 @@
         </section>
 
 
-        <!-- =========================
+        <!-- =================================
              STATS
-        ========================== -->
+        ================================== -->
 
         <section class="stats">
 
-            <div class="stat">
+            <div class="stat reveal">
 
                 <strong>
                     12
                 </strong>
 
                 <span>
-                    Curated Residences
+                    Signature Residences
                 </span>
 
             </div>
 
-            <div class="stat">
 
-                <strong>
-                    08
-                </strong>
-
-                <span>
-                    Architectural Partners
-                </span>
-
-            </div>
-
-            <div class="stat">
+            <div class="stat reveal">
 
                 <strong>
                     04
                 </strong>
 
                 <span>
-                    Signature Locations
+                    Curated Destinations
                 </span>
 
             </div>
 
-            <div class="stat">
+
+            <div class="stat reveal">
 
                 <strong>
-                    01
+                    26
                 </strong>
 
                 <span>
-                    Extraordinary Standard
+                    Design Partners
+                </span>
+
+            </div>
+
+
+            <div class="stat reveal">
+
+                <strong>
+                    ∞
+                </strong>
+
+                <span>
+                    Attention to Detail
                 </span>
 
             </div>
@@ -514,34 +614,55 @@
         </section>
 
 
-        <!-- =========================
-             GALLERY PLACEHOLDER
-        ========================== -->
+        <!-- =================================
+             GALLERY
+        ================================== -->
 
-        <section class="gallery-preview" id="gallery">
+        <section
+            class="gallery-preview"
+            id="gallery"
+        >
 
-            <div class="gallery-heading">
+            <div class="gallery-heading reveal">
 
                 <p class="eyebrow">
-                    ARCHITECTURAL JOURNAL
+                    A VISUAL JOURNEY
                 </p>
 
                 <h2>
-                    Spaces with a soul.
+                    Space.
+                    <br>
+                    Light.
+                    <br>
+                    <em>Silence.</em>
                 </h2>
 
             </div>
 
-            <div class="gallery-message">
+
+            <div class="gallery-message reveal">
 
                 <p>
-                    A curated visual archive of architecture,
-                    interiors and considered living.
+
+                    Explore a world where natural
+                    materials, sculptural forms and
+                    considered spaces create a distinct
+                    sense of place.
+
                 </p>
 
-                <a href="#contact" class="text-link dark-link">
-                    Enter the Journal
-                    <span>↗</span>
+
+                <a
+                    href="#contact"
+                    class="text-link dark-link"
+                >
+
+                    Enter Gallery
+
+                    <span>
+                        ↗
+                    </span>
+
                 </a>
 
             </div>
@@ -549,30 +670,39 @@
         </section>
 
 
-        <!-- =========================
+        <!-- =================================
              PRIVATE VIEWING
-        ========================== -->
+        ================================== -->
 
-        <section class="viewing" id="viewing">
+        <section class="viewing">
 
-            <div class="viewing-content">
+            <div class="viewing-content reveal">
 
                 <p class="eyebrow">
-                    PRIVATE ACCESS
+                    BY APPOINTMENT ONLY
                 </p>
+
 
                 <h2>
-                    Experience it
-                    <em>in person.</em>
+                    Your next
+                    <br>
+                    chapter begins
+                    <em>here.</em>
                 </h2>
 
+
                 <p>
-                    Arrange a private viewing with an AURELIS
-                    representative and discover a residence
-                    selected around your lifestyle.
+
+                    Arrange a private consultation
+                    with the AURELIS residences team.
+
                 </p>
 
-                <a href="#contact" class="button button-light">
+
+                <a
+                    href="#contact"
+                    class="button button-light"
+                >
                     Request Private Viewing
                 </a>
 
@@ -581,37 +711,46 @@
         </section>
 
 
-        <!-- =========================
+        <!-- =================================
              CONTACT
-        ========================== -->
+        ================================== -->
 
-        <section class="contact" id="contact">
+        <section
+            class="contact"
+            id="contact"
+        >
 
-            <div class="contact-heading">
+            <div class="contact-heading reveal">
 
                 <p class="eyebrow">
-                    PRIVATE CONCIERGE
+                    PRIVATE ENQUIRIES
                 </p>
 
+
                 <h2>
-                    Begin your
-                    <em>next chapter.</em>
+                    Let's find
+                    <br>
+                    your
+                    <em>place.</em>
                 </h2>
 
             </div>
 
-            <div class="contact-details">
 
-                <a href="mailto:concierge@aurelis.example">
-                    concierge@aurelis.example
+            <div class="contact-details reveal">
+
+                <a href="mailto:hello@aurelis.example">
+                    hello@aurelis.example
                 </a>
 
-                <a href="tel:+919876543210">
-                    +91 98765 43210
+
+                <a href="tel:+919999999999">
+                    +91 99999 99999
                 </a>
+
 
                 <p>
-                    Mumbai · Goa · Alibaug
+                    By appointment · India
                 </p>
 
             </div>
@@ -621,9 +760,9 @@
     </main>
 
 
-    <!-- =========================
+    <!-- =================================
          FOOTER
-    ========================== -->
+    ================================== -->
 
     <footer>
 
@@ -631,20 +770,22 @@
             AURELIS
         </div>
 
+
         <p>
-            PRIVATE RESIDENCES
+            PRIVATE RESIDENCES · EST. 2026
         </p>
 
+
         <span>
-            © 2026 AURELIS. ALL RIGHTS RESERVED.
+            © 2026 AURELIS
         </span>
 
     </footer>
 
 
-    <!-- JAVASCRIPT -->
+    <!-- Main JavaScript -->
 
-    <script src="app.js"></script>
+    <script src="./app.js"></script>
 
 </body>
 
