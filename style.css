@@ -1,792 +1,1803 @@
-<!DOCTYPE html>
-<html lang="en">
+/* =========================================================
+   AURELIS
+   COMPLETE CSS
+========================================================= */
 
-<head>
+:root {
+    --black: #12110f;
+    --dark: #191713;
+    --cream: #eee9df;
+    --white: #faf8f3;
+    --paper: #e4ddd0;
+    --gold: #b79a65;
+    --muted: #777168;
+    --line: rgba(25, 23, 19, 0.15);
+    --light-line: rgba(255, 255, 255, 0.22);
+}
 
-    <meta charset="UTF-8">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+/* =========================
+   RESET
+========================= */
 
-    <meta
-        name="description"
-        content="AURELIS — Private residences shaped by architecture, craftsmanship and timeless design."
-    >
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-    <title>AURELIS — Private Residences</title>
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+html {
+    scroll-behavior: smooth;
+}
 
-    <link
-        rel="preconnect"
-        href="https://fonts.gstatic.com"
-        crossorigin
-    >
 
-    <link
-        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
-        rel="stylesheet"
-    >
+body {
+    background: var(--cream);
+    color: var(--black);
 
-    <!-- Main CSS -->
-    <link
-        rel="stylesheet"
-        href="./style.css"
-    >
+    font-family: "Inter", sans-serif;
 
-</head>
+    overflow-x: hidden;
+}
 
 
-<body>
+body.no-scroll {
+    overflow: hidden;
+}
 
-    <!-- =================================
-         LOADER
-    ================================== -->
 
-    <div
-        class="loader"
-        id="loader"
-    >
+a {
+    color: inherit;
+    text-decoration: none;
+}
 
-        <div class="loader-brand">
-            AURELIS
-        </div>
 
-        <div class="loader-line">
-            <span></span>
-        </div>
+button {
+    font: inherit;
+}
 
-        <p>
-            PRIVATE RESIDENCES
-        </p>
 
-    </div>
+/* =========================
+   LOADER
+========================= */
 
+.loader {
+    position: fixed;
+    inset: 0;
 
-    <!-- =================================
-         HEADER
-    ================================== -->
+    z-index: 9999;
 
-    <header
-        class="site-header"
-        id="siteHeader"
-    >
+    background: var(--black);
+    color: var(--white);
 
-        <a
-            href="#home"
-            class="brand"
-        >
-            AURELIS
-        </a>
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 
+    transition:
+        opacity 0.8s ease,
+        visibility 0.8s ease;
+}
 
-        <nav
-            class="main-nav"
-            id="mainNav"
-        >
 
-            <a href="#home">
-                Home
-            </a>
+.loader.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
 
-            <a href="#philosophy">
-                Philosophy
-            </a>
 
-            <a href="#residences">
-                Residences
-            </a>
+.loader-brand {
+    font-family: "Cormorant Garamond", serif;
 
-            <a href="#gallery">
-                Gallery
-            </a>
+    font-size: clamp(45px, 8vw, 90px);
 
-            <a href="#contact">
-                Contact
-            </a>
+    font-weight: 500;
 
-        </nav>
+    letter-spacing: 12px;
+}
 
 
-        <a
-            href="#contact"
-            class="nav-cta"
-        >
-            Private Viewing
-        </a>
+.loader-line {
+    width: min(280px, 60vw);
 
+    height: 1px;
 
-        <button
-            class="menu-toggle"
-            id="menuToggle"
-            type="button"
-            aria-label="Open menu"
-            aria-expanded="false"
-        >
+    margin: 24px 0 18px;
 
-            <span></span>
-            <span></span>
+    background: rgba(255, 255, 255, 0.2);
+}
 
-        </button>
 
-    </header>
+.loader-line span {
+    display: block;
 
+    width: 0;
+    height: 100%;
 
-    <main>
+    background: var(--gold);
 
-        <!-- =================================
-             HERO
-        ================================== -->
+    animation: loaderProgress 1.5s ease forwards;
+}
 
-        <section
-            class="hero"
-            id="home"
-        >
 
-            <div class="hero-background">
+.loader p {
+    font-size: 9px;
 
-                <div class="hero-orb orb-one"></div>
+    letter-spacing: 4px;
 
-                <div class="hero-orb orb-two"></div>
+    color: #8d887f;
+}
 
-                <div class="architecture architecture-one"></div>
 
-                <div class="architecture architecture-two"></div>
+@keyframes loaderProgress {
 
-                <div class="architecture architecture-three"></div>
+    from {
+        width: 0;
+    }
 
-            </div>
+    to {
+        width: 100%;
+    }
 
+}
 
-            <div class="hero-overlay"></div>
 
+/* =========================
+   HEADER
+========================= */
 
-            <div class="hero-content">
+.site-header {
+    position: fixed;
 
-                <p class="eyebrow">
-                    EST. 2026 · CURATED LIVING
-                </p>
+    top: 0;
+    left: 0;
 
+    width: 100%;
+    height: 88px;
 
-                <h1>
-                    Where Architecture
-                    <br>
-                    Becomes a
-                    <em>Lifestyle.</em>
-                </h1>
+    padding: 0 6vw;
 
+    z-index: 1000;
 
-                <p class="hero-description">
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
-                    A curated collection of extraordinary
-                    residences shaped by architecture,
-                    craftsmanship and timeless design.
+    color: white;
 
-                </p>
+    transition:
+        background 0.4s ease,
+        height 0.4s ease;
+}
 
 
-                <div class="hero-actions">
+.site-header.scrolled {
+    height: 70px;
 
-                    <a
-                        href="#residences"
-                        class="button button-light"
-                    >
-                        Explore Residences
-                    </a>
+    background: rgba(18, 17, 15, 0.94);
 
+    backdrop-filter: blur(18px);
+}
 
-                    <a
-                        href="#philosophy"
-                        class="text-link"
-                    >
 
-                        Discover AURELIS
+.brand {
+    font-family: "Cormorant Garamond", serif;
 
-                        <span>
-                            ↗
-                        </span>
+    font-size: 28px;
 
-                    </a>
+    font-weight: 600;
 
-                </div>
+    letter-spacing: 5px;
+}
 
-            </div>
 
+.main-nav {
+    display: flex;
 
-            <div class="hero-bottom">
+    align-items: center;
 
-                <span>
-                    SCROLL TO DISCOVER
-                </span>
+    gap: 32px;
+}
 
-                <span class="scroll-arrow">
-                    ↓
-                </span>
 
-            </div>
+.main-nav a {
+    position: relative;
 
+    font-size: 10px;
 
-            <div class="hero-side">
-                01 / THE COLLECTION
-            </div>
+    letter-spacing: 1.7px;
 
-        </section>
+    text-transform: uppercase;
 
+    color: rgba(255, 255, 255, 0.82);
 
-        <!-- =================================
-             INTRO
-        ================================== -->
+    transition: color 0.3s ease;
+}
 
-        <section
-            class="intro reveal"
-            id="philosophy"
-        >
 
-            <div class="intro-label">
-                A NEW STANDARD
-                <br>
-                OF LIVING
-            </div>
+.main-nav a::after {
+    content: "";
 
+    position: absolute;
 
-            <div class="intro-content">
+    left: 0;
+    bottom: -7px;
 
-                <p class="eyebrow">
-                    THE AURELIS PHILOSOPHY
-                </p>
+    width: 0;
+    height: 1px;
 
+    background: var(--gold);
 
-                <h2>
-                    Not simply a residence.
-                    <em>A statement.</em>
-                </h2>
+    transition: width 0.3s ease;
+}
 
 
-                <p class="intro-text">
+.main-nav a:hover {
+    color: white;
+}
 
-                    AURELIS brings together exceptional
-                    homes, remarkable architecture and
-                    considered interiors for people who
-                    believe where you live should reflect
-                    how you live.
 
-                </p>
+.main-nav a:hover::after {
+    width: 100%;
+}
 
-            </div>
 
-        </section>
+.nav-cta {
+    padding: 12px 18px;
 
+    border: 1px solid var(--light-line);
 
-        <!-- =================================
-             RESIDENCES
-        ================================== -->
+    font-size: 9px;
 
-        <section
-            class="residences"
-            id="residences"
-        >
+    letter-spacing: 1.5px;
 
-            <div class="section-heading reveal">
+    text-transform: uppercase;
 
-                <div>
+    transition: 0.3s ease;
+}
 
-                    <p class="eyebrow">
-                        THE COLLECTION
-                    </p>
 
-                    <h2>
-                        Selected
-                        <br>
-                        Residences
-                    </h2>
+.nav-cta:hover {
+    background: var(--gold);
 
-                </div>
+    border-color: var(--gold);
 
+    color: var(--black);
+}
 
-                <a
-                    href="#contact"
-                    class="text-link dark-link"
-                >
 
-                    View All Residences
+.menu-toggle {
+    display: none;
 
-                    <span>
-                        ↗
-                    </span>
+    width: 42px;
+    height: 42px;
 
-                </a>
+    border: 1px solid var(--light-line);
 
-            </div>
+    background: transparent;
 
+    cursor: pointer;
 
-            <div class="residence-grid">
+    align-items: center;
+    justify-content: center;
 
+    flex-direction: column;
 
-                <!-- Residence 01 -->
+    gap: 6px;
+}
 
-                <article
-                    class="residence-card residence-large reveal"
-                >
 
-                    <a
-                        href="#contact"
-                        class="residence-visual visual-one"
-                    >
+.menu-toggle span {
+    display: block;
 
-                        <span class="card-number">
-                            01
-                        </span>
+    width: 18px;
+    height: 1px;
 
-                        <span class="visual-label">
-                            AURELIS COLLECTION
-                        </span>
+    background: white;
 
-                        <span class="card-arrow">
-                            ↗
-                        </span>
+    transition: 0.3s ease;
+}
 
-                    </a>
 
+/* =========================
+   HERO
+========================= */
 
-                    <div class="residence-info">
+.hero {
+    position: relative;
 
-                        <div>
+    min-height: 100vh;
+    min-height: 100svh;
 
-                            <p class="location">
-                                ALIBAUG · MAHARASHTRA
-                            </p>
+    overflow: hidden;
 
-                            <h3>
-                                Casa Aurelia
-                            </h3>
+    display: flex;
+    align-items: center;
 
-                        </div>
+    background: #15130f;
 
+    color: white;
+}
 
-                        <div class="residence-details">
 
-                            <span>
-                                5 BED
-                            </span>
+.hero-background {
+    position: absolute;
 
-                            <span>
-                                6 BATH
-                            </span>
+    inset: 0;
 
-                            <span>
-                                6,800 SQ FT
-                            </span>
+    overflow: hidden;
 
-                        </div>
+    background:
+        linear-gradient(
+            115deg,
+            #171510 0%,
+            #27231b 45%,
+            #0f0e0c 100%
+        );
+}
 
-                    </div>
 
-                </article>
+/* Decorative luxury architecture */
 
+.architecture {
+    position: absolute;
 
-                <!-- Residence 02 -->
+    bottom: -10%;
 
-                <article
-                    class="residence-card reveal"
-                >
+    border: 1px solid rgba(255,255,255,0.08);
 
-                    <a
-                        href="#contact"
-                        class="residence-visual visual-two"
-                    >
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.07),
+            rgba(255,255,255,0.01)
+        );
 
-                        <span class="card-number">
-                            02
-                        </span>
+    transform: perspective(700px) rotateY(-20deg);
 
-                        <span class="visual-label">
-                            PRIVATE COLLECTION
-                        </span>
+    box-shadow:
+        inset 0 0 80px rgba(255,255,255,0.025),
+        0 30px 100px rgba(0,0,0,0.3);
+}
 
-                        <span class="card-arrow">
-                            ↗
-                        </span>
 
-                    </a>
+.architecture-one {
+    right: 7%;
 
+    width: 43%;
 
-                    <div class="residence-info">
+    height: 82%;
 
-                        <div>
+    transform:
+        perspective(900px)
+        rotateY(-24deg)
+        rotateX(2deg);
+}
 
-                            <p class="location">
-                                GOA · INDIA
-                            </p>
 
-                            <h3>
-                                Villa Solenne
-                            </h3>
+.architecture-two {
+    right: 28%;
 
-                        </div>
+    width: 25%;
 
+    height: 65%;
 
-                        <div class="residence-details">
+    transform:
+        perspective(900px)
+        rotateY(23deg)
+        rotateX(2deg);
+}
 
-                            <span>
-                                4 BED
-                            </span>
 
-                            <span>
-                                5 BATH
-                            </span>
+.architecture-three {
+    right: -5%;
 
-                        </div>
+    width: 25%;
 
-                    </div>
+    height: 50%;
 
-                </article>
+    transform:
+        perspective(900px)
+        rotateY(-30deg);
+}
 
 
-                <!-- Residence 03 -->
+.hero-orb {
+    position: absolute;
 
-                <article
-                    class="residence-card reveal"
-                >
+    border-radius: 50%;
 
-                    <a
-                        href="#contact"
-                        class="residence-visual visual-three"
-                    >
+    filter: blur(3px);
 
-                        <span class="card-number">
-                            03
-                        </span>
+    opacity: 0.5;
+}
 
-                        <span class="visual-label">
-                            URBAN COLLECTION
-                        </span>
 
-                        <span class="card-arrow">
-                            ↗
-                        </span>
+.orb-one {
+    width: 420px;
+    height: 420px;
 
-                    </a>
+    right: 12%;
+    top: 8%;
 
+    background:
+        radial-gradient(
+            circle,
+            rgba(183,154,101,0.35),
+            transparent 68%
+        );
+}
 
-                    <div class="residence-info">
 
-                        <div>
+.orb-two {
+    width: 350px;
+    height: 350px;
 
-                            <p class="location">
-                                MUMBAI · MAHARASHTRA
-                            </p>
+    left: 10%;
+    bottom: -100px;
 
-                            <h3>
-                                Maison No. 07
-                            </h3>
+    background:
+        radial-gradient(
+            circle,
+            rgba(110,90,55,0.22),
+            transparent 68%
+        );
+}
 
-                        </div>
 
+.hero-overlay {
+    position: absolute;
 
-                        <div class="residence-details">
+    inset: 0;
 
-                            <span>
-                                3 BED
-                            </span>
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0,0,0,0.88) 0%,
+            rgba(0,0,0,0.62) 42%,
+            rgba(0,0,0,0.12) 100%
+        );
+}
 
-                            <span>
-                                4 BATH
-                            </span>
 
-                        </div>
+.hero-content {
+    position: relative;
 
-                    </div>
+    z-index: 2;
 
-                </article>
+    width: min(850px, 88%);
 
-            </div>
+    margin-left: 9vw;
 
-        </section>
+    padding-top: 80px;
+}
 
 
-        <!-- =================================
-             PHILOSOPHY
-        ================================== -->
+.eyebrow {
+    font-size: 9px;
 
-        <section class="philosophy">
+    letter-spacing: 4px;
 
-            <div class="philosophy-number">
-                02 / THE PHILOSOPHY
-            </div>
+    color: var(--gold);
 
+    text-transform: uppercase;
+}
 
-            <div class="philosophy-content reveal">
 
-                <p class="eyebrow">
-                    BEYOND THE ORDINARY
-                </p>
+.hero h1 {
+    max-width: 900px;
 
+    margin: 22px 0 28px;
 
-                <h2>
-                    Designed
-                    <br>
-                    for those who
-                    <em>expect more.</em>
-                </h2>
+    font-family: "Cormorant Garamond", serif;
 
+    font-size: clamp(60px, 8vw, 120px);
 
-                <p>
+    font-weight: 500;
 
-                    Every AURELIS residence is defined
-                    by proportion, materiality, light and
-                    an uncompromising attention to detail.
+    line-height: 0.88;
 
-                </p>
+    letter-spacing: -3px;
+}
 
 
-                <a
-                    href="#contact"
-                    class="button button-light"
-                >
-                    Discover Our Vision
-                </a>
+.hero h1 em {
+    color: var(--gold);
 
-            </div>
+    font-style: italic;
+}
 
-        </section>
 
+.hero-description {
+    max-width: 500px;
 
-        <!-- =================================
-             STATS
-        ================================== -->
+    color: rgba(255,255,255,0.68);
 
-        <section class="stats">
+    font-size: 13px;
 
-            <div class="stat reveal">
+    line-height: 2;
+}
 
-                <strong>
-                    12
-                </strong>
 
-                <span>
-                    Signature Residences
-                </span>
+.hero-actions {
+    display: flex;
 
-            </div>
+    align-items: center;
 
+    gap: 30px;
 
-            <div class="stat reveal">
+    margin-top: 40px;
+}
 
-                <strong>
-                    04
-                </strong>
 
-                <span>
-                    Curated Destinations
-                </span>
+/* =========================
+   BUTTONS
+========================= */
 
-            </div>
+.button {
+    min-height: 50px;
 
+    padding: 0 26px;
 
-            <div class="stat reveal">
+    display: inline-flex;
 
-                <strong>
-                    26
-                </strong>
+    align-items: center;
+    justify-content: center;
 
-                <span>
-                    Design Partners
-                </span>
+    border: 1px solid transparent;
 
-            </div>
+    font-size: 9px;
 
+    letter-spacing: 2px;
 
-            <div class="stat reveal">
+    text-transform: uppercase;
 
-                <strong>
-                    ∞
-                </strong>
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        color 0.3s ease;
+}
 
-                <span>
-                    Attention to Detail
-                </span>
 
-            </div>
+.button:hover {
+    transform: translateY(-3px);
+}
 
-        </section>
 
+.button-light {
+    background: var(--white);
 
-        <!-- =================================
-             GALLERY
-        ================================== -->
+    color: var(--black);
+}
 
-        <section
-            class="gallery-preview"
-            id="gallery"
-        >
 
-            <div class="gallery-heading reveal">
+.button-light:hover {
+    background: var(--gold);
+}
 
-                <p class="eyebrow">
-                    A VISUAL JOURNEY
-                </p>
 
-                <h2>
-                    Space.
-                    <br>
-                    Light.
-                    <br>
-                    <em>Silence.</em>
-                </h2>
+.text-link {
+    display: inline-flex;
 
-            </div>
+    align-items: center;
 
+    gap: 12px;
 
-            <div class="gallery-message reveal">
+    font-size: 9px;
 
-                <p>
+    letter-spacing: 2px;
 
-                    Explore a world where natural
-                    materials, sculptural forms and
-                    considered spaces create a distinct
-                    sense of place.
+    text-transform: uppercase;
+}
 
-                </p>
 
+.text-link span {
+    font-size: 16px;
 
-                <a
-                    href="#contact"
-                    class="text-link dark-link"
-                >
+    transition: transform 0.3s ease;
+}
 
-                    Enter Gallery
 
-                    <span>
-                        ↗
-                    </span>
+.text-link:hover span {
+    transform: translate(4px, -4px);
+}
 
-                </a>
 
-            </div>
+.hero-bottom {
+    position: absolute;
 
-        </section>
+    z-index: 2;
 
+    left: 9vw;
+    bottom: 28px;
 
-        <!-- =================================
-             PRIVATE VIEWING
-        ================================== -->
+    display: flex;
 
-        <section class="viewing">
+    align-items: center;
 
-            <div class="viewing-content reveal">
+    gap: 15px;
 
-                <p class="eyebrow">
-                    BY APPOINTMENT ONLY
-                </p>
+    color: rgba(255,255,255,0.55);
 
+    font-size: 8px;
 
-                <h2>
-                    Your next
-                    <br>
-                    chapter begins
-                    <em>here.</em>
-                </h2>
+    letter-spacing: 2px;
+}
 
 
-                <p>
+.scroll-arrow {
+    font-size: 17px;
 
-                    Arrange a private consultation
-                    with the AURELIS residences team.
+    animation: arrowMove 1.7s infinite;
+}
 
-                </p>
 
+@keyframes arrowMove {
 
-                <a
-                    href="#contact"
-                    class="button button-light"
-                >
-                    Request Private Viewing
-                </a>
+    0%,
+    100% {
+        transform: translateY(0);
+    }
 
-            </div>
+    50% {
+        transform: translateY(5px);
+    }
 
-        </section>
+}
 
 
-        <!-- =================================
-             CONTACT
-        ================================== -->
+.hero-side {
+    position: absolute;
 
-        <section
-            class="contact"
-            id="contact"
-        >
+    right: 4vw;
+    bottom: 28px;
 
-            <div class="contact-heading reveal">
+    z-index: 2;
 
-                <p class="eyebrow">
-                    PRIVATE ENQUIRIES
-                </p>
+    color: rgba(255,255,255,0.45);
 
+    font-size: 8px;
 
-                <h2>
-                    Let's find
-                    <br>
-                    your
-                    <em>place.</em>
-                </h2>
+    letter-spacing: 3px;
 
-            </div>
+    writing-mode: vertical-rl;
+}
 
 
-            <div class="contact-details reveal">
+/* =========================
+   INTRO
+========================= */
 
-                <a href="mailto:hello@aurelis.example">
-                    hello@aurelis.example
-                </a>
+.intro {
+    display: grid;
 
+    grid-template-columns: 20% 1fr;
 
-                <a href="tel:+919999999999">
-                    +91 99999 99999
-                </a>
+    gap: 50px;
 
+    padding: 140px 9vw;
 
-                <p>
-                    By appointment · India
-                </p>
+    background: var(--cream);
+}
 
-            </div>
 
-        </section>
+.intro-label {
+    padding-top: 10px;
 
-    </main>
+    color: var(--muted);
 
+    font-size: 9px;
 
-    <!-- =================================
-         FOOTER
-    ================================== -->
+    letter-spacing: 3px;
 
-    <footer>
+    line-height: 1.8;
+}
 
-        <div class="footer-brand">
-            AURELIS
-        </div>
 
+.intro-content {
+    max-width: 900px;
+}
 
-        <p>
-            PRIVATE RESIDENCES · EST. 2026
-        </p>
 
+.intro-content h2 {
+    margin: 20px 0 32px;
 
-        <span>
-            © 2026 AURELIS
-        </span>
+    font-family: "Cormorant Garamond", serif;
 
-    </footer>
+    font-size: clamp(50px, 6vw, 85px);
 
+    font-weight: 500;
 
-    <!-- Main JavaScript -->
+    line-height: 0.95;
 
-    <script src="./app.js"></script>
+    letter-spacing: -2px;
+}
 
-</body>
 
-</html>
+.intro-content h2 em {
+    color: var(--gold);
+
+    font-style: italic;
+}
+
+
+.intro-text {
+    max-width: 600px;
+
+    color: var(--muted);
+
+    font-size: 13px;
+
+    line-height: 2;
+}
+
+
+/* =========================
+   RESIDENCES
+========================= */
+
+.residences {
+    padding: 120px 7vw;
+
+    background: var(--white);
+}
+
+
+.section-heading {
+    display: flex;
+
+    align-items: flex-end;
+
+    justify-content: space-between;
+
+    gap: 40px;
+
+    margin-bottom: 60px;
+}
+
+
+.section-heading h2 {
+    margin-top: 18px;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(52px, 6vw, 82px);
+
+    font-weight: 500;
+
+    line-height: 0.9;
+}
+
+
+.dark-link {
+    color: var(--black);
+
+    border-bottom: 1px solid var(--line);
+
+    padding-bottom: 8px;
+}
+
+
+.residence-grid {
+    display: grid;
+
+    grid-template-columns: 1.3fr 1fr;
+
+    gap: 60px 35px;
+}
+
+
+.residence-large {
+    grid-row: span 2;
+}
+
+
+.residence-visual {
+    position: relative;
+
+    display: block;
+
+    overflow: hidden;
+
+    min-height: 480px;
+
+    background: #38342d;
+}
+
+
+.residence-large .residence-visual {
+    min-height: 720px;
+}
+
+
+/* Residence visual designs */
+
+.visual-one {
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,0.08),
+            transparent 45%
+        ),
+        linear-gradient(
+            160deg,
+            #5e584c,
+            #24221d 48%,
+            #11100e
+        );
+}
+
+
+.visual-two {
+    background:
+        linear-gradient(
+            120deg,
+            rgba(183,154,101,0.32),
+            transparent 40%
+        ),
+        linear-gradient(
+            150deg,
+            #403d36,
+            #151411
+        );
+}
+
+
+.visual-three {
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,0.13),
+            transparent 35%
+        ),
+        linear-gradient(
+            155deg,
+            #71695b,
+            #27251f 50%,
+            #12110f
+        );
+}
+
+
+/* Abstract building lines */
+
+.residence-visual::before,
+.residence-visual::after {
+    content: "";
+
+    position: absolute;
+
+    background: rgba(255,255,255,0.1);
+
+    transition:
+        transform 0.8s ease,
+        opacity 0.8s ease;
+}
+
+
+.residence-visual::before {
+    width: 75%;
+
+    height: 1px;
+
+    left: 12%;
+
+    top: 32%;
+
+    box-shadow:
+        0 70px 0 rgba(255,255,255,0.09),
+        0 140px 0 rgba(255,255,255,0.07),
+        0 210px 0 rgba(255,255,255,0.05);
+}
+
+
+.residence-visual::after {
+    width: 1px;
+
+    height: 80%;
+
+    left: 38%;
+
+    top: 10%;
+
+    box-shadow:
+        90px 0 0 rgba(255,255,255,0.07),
+        180px 0 0 rgba(255,255,255,0.05);
+}
+
+
+.residence-card:hover .residence-visual::before {
+    transform: translateX(15px);
+}
+
+
+.residence-card:hover .residence-visual::after {
+    transform: translateY(-15px);
+}
+
+
+.card-number {
+    position: absolute;
+
+    z-index: 2;
+
+    top: 20px;
+    left: 20px;
+
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(255,255,255,0.88);
+
+    color: var(--black);
+
+    font-size: 9px;
+}
+
+
+.visual-label {
+    position: absolute;
+
+    z-index: 2;
+
+    left: 25px;
+    bottom: 25px;
+
+    color: rgba(255,255,255,0.65);
+
+    font-size: 8px;
+
+    letter-spacing: 3px;
+}
+
+
+.card-arrow {
+    position: absolute;
+
+    z-index: 2;
+
+    right: 22px;
+    bottom: 22px;
+
+    width: 45px;
+    height: 45px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(255,255,255,0.4);
+
+    color: white;
+
+    font-size: 17px;
+
+    transition: 0.3s ease;
+}
+
+
+.residence-card:hover .card-arrow {
+    background: var(--gold);
+
+    border-color: var(--gold);
+
+    color: var(--black);
+}
+
+
+.residence-info {
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding-top: 22px;
+}
+
+
+.location {
+    margin-bottom: 7px;
+
+    color: var(--muted);
+
+    font-size: 8px;
+
+    letter-spacing: 2px;
+}
+
+
+.residence-info h3 {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 33px;
+
+    font-weight: 500;
+}
+
+
+.residence-details {
+    display: flex;
+
+    align-items: flex-end;
+
+    gap: 12px;
+
+    padding-bottom: 5px;
+
+    color: var(--muted);
+
+    font-size: 8px;
+
+    letter-spacing: 1px;
+
+    white-space: nowrap;
+}
+
+
+/* =========================
+   PHILOSOPHY
+========================= */
+
+.philosophy {
+    position: relative;
+
+    min-height: 700px;
+
+    padding: 130px 9vw;
+
+    display: flex;
+
+    align-items: center;
+
+    overflow: hidden;
+
+    background: var(--black);
+
+    color: var(--cream);
+}
+
+
+.philosophy::before {
+    content: "A";
+
+    position: absolute;
+
+    right: -30px;
+    bottom: -190px;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 700px;
+
+    line-height: 1;
+
+    color: rgba(255,255,255,0.025);
+
+    transition: transform 0.2s ease;
+}
+
+
+.philosophy-number {
+    position: absolute;
+
+    top: 55px;
+    left: 9vw;
+
+    color: rgba(255,255,255,0.3);
+
+    font-size: 8px;
+
+    letter-spacing: 3px;
+}
+
+
+.philosophy-content {
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 900px;
+}
+
+
+.philosophy-content h2 {
+    margin: 22px 0 32px;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(60px, 8vw, 110px);
+
+    font-weight: 500;
+
+    line-height: 0.88;
+
+    letter-spacing: -3px;
+}
+
+
+.philosophy-content h2 em {
+    color: var(--gold);
+
+    font-style: italic;
+}
+
+
+.philosophy-content > p:not(.eyebrow) {
+    max-width: 500px;
+
+    margin-bottom: 38px;
+
+    color: #aaa59b;
+
+    font-size: 13px;
+
+    line-height: 2;
+}
+
+
+/* =========================
+   STATS
+========================= */
+
+.stats {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    background: var(--gold);
+}
+
+
+.stat {
+    padding: 60px 20px;
+
+    text-align: center;
+
+    border-right: 1px solid rgba(0,0,0,0.15);
+}
+
+
+.stat:last-child {
+    border-right: 0;
+}
+
+
+.stat strong {
+    display: block;
+
+    margin-bottom: 10px;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 68px;
+
+    font-weight: 500;
+
+    line-height: 1;
+}
+
+
+.stat span {
+    font-size: 8px;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================
+   GALLERY
+========================= */
+
+.gallery-preview {
+    min-height: 620px;
+
+    padding: 120px 9vw;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 80px;
+
+    background: var(--paper);
+}
+
+
+.gallery-heading h2 {
+    margin-top: 20px;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(65px, 8vw, 115px);
+
+    font-weight: 500;
+
+    line-height: 0.84;
+
+    letter-spacing: -3px;
+}
+
+
+.gallery-heading h2 em {
+    color: var(--gold);
+
+    font-style: italic;
+}
+
+
+.gallery-message {
+    max-width: 310px;
+}
+
+
+.gallery-message p {
+    margin-bottom: 28px;
+
+    color: var(--muted);
+
+    font-size: 13px;
+
+    line-height: 2;
+}
+
+
+/* =========================
+   VIEWING
+========================= */
+
+.viewing {
+    min-height: 620px;
+
+    padding: 120px 9vw;
+
+    display: flex;
+
+    align-items: center;
+
+    background:
+        linear-gradient(
+            120deg,
+            #25221b,
+            #0d0d0b
+        );
+
+    color: white;
+
+    overflow: hidden;
+
+    position: relative;
+}
+
+
+.viewing::after {
+    content: "";
+
+    position: absolute;
+
+    width: 600px;
+    height: 600px;
+
+    right: -150px;
+    top: -100px;
+
+    border: 1px solid rgba(183,154,101,0.18);
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 0 80px rgba(183,154,101,0.025),
+        0 0 0 160px rgba(183,154,101,0.015);
+}
+
+
+.viewing-content {
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 800px;
+}
+
+
+.viewing-content h2 {
+    margin: 20px 0 30px;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(60px, 8vw, 110px);
+
+    font-weight: 500;
+
+    line-height: 0.88;
+}
+
+
+.viewing-content h2 em {
+    color: var(--gold);
+
+    font-style: italic;
+}
+
+
+.viewing-content > p:not(.eyebrow) {
+    max-width: 480px;
+
+    margin-bottom: 38px;
+
+    color: #aaa59b;
+
+    font-size: 13px;
+
+    line-height: 2;
+}
+
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact {
+    padding: 130px 9vw;
+
+    display: grid;
+
+    grid-template-columns: 1.4fr 1fr;
+
+    gap: 70px;
+
+    background: var(--cream);
+}
+
+
+.contact-heading h2 {
+    margin-top: 20px;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(65px, 8vw, 110px);
+
+    font-weight: 500;
+
+    line-height: 0.86;
+}
+
+
+.contact-heading h2 em {
+    color: var(--gold);
+
+    font-style: italic;
+}
+
+
+.contact-details {
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    gap: 18px;
+}
+
+
+.contact-details a {
+    width: fit-content;
+
+    border-bottom: 1px solid var(--line);
+
+    padding-bottom: 8px;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 28px;
+
+    transition: color 0.3s ease;
+}
+
+
+.contact-details a:hover {
+    color: var(--gold);
+}
+
+
+.contact-details p {
+    margin-top: 12px;
+
+    color: var(--muted);
+
+    font-size: 8px;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    padding: 50px 7vw;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 30px;
+
+    background: var(--black);
+
+    color: white;
+}
+
+
+.footer-brand {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 32px;
+
+    letter-spacing: 5px;
+}
+
+
+footer p,
+footer span {
+    color: #77736c;
+
+    font-size: 8px;
+
+    letter-spacing: 2px;
+}
+
+
+/* =========================
+   SCROLL REVEAL
+========================= */
+
+.reveal {
+    opacity: 0;
+
+    transform: translateY(40px);
+
+    transition:
+        opacity 0.9s ease,
+        transform 0.9s ease;
+}
+
+
+.reveal.visible {
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 900px) {
+
+    .main-nav {
+        gap: 18px;
+    }
+
+
+    .nav-cta {
+        display: none;
+    }
+
+
+    .residence-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .residence-large {
+        grid-row: auto;
+    }
+
+
+    .residence-large .residence-visual {
+        min-height: 600px;
+    }
+
+
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+
+    .stat:nth-child(2) {
+        border-right: 0;
+    }
+
+
+    .stat:nth-child(-n + 2) {
+        border-bottom: 1px solid rgba(0,0,0,0.15);
+    }
+
+}
+
+
+@media (max-width: 700px) {
+
+    .site-header {
+        height: 72px;
+
+        padding: 0 6vw;
+    }
+
+
+    .brand {
+        font-size: 23px;
+    }
+
+
+    .main-nav {
+        position: fixed;
+
+        top: 72px;
+        left: 0;
+
+        width: 100%;
+
+        padding: 30px 7vw;
+
+        display: none;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 23px;
+
+        background: rgba(18,17,15,0.98);
+
+        backdrop-filter: blur(20px);
+    }
+
+
+    .main-nav.open {
+        display: flex;
+    }
+
+
+    .main-nav a {
+        font-size: 11px;
+    }
+
+
+    .menu-toggle {
+        display: flex;
+    }
+
+
+    .hero-content {
+        width: 86%;
+
+        margin: 0 auto;
+
+        padding-top: 70px;
+    }
+
+
+    .hero h1 {
+        font-size: clamp(56px, 14vw, 82px);
+
+        letter-spacing: -2px;
+    }
+
+
+    .hero-description {
+        font-size: 12px;
+    }
+
+
+    .hero-actions {
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 22px;
+    }
+
+
+    .hero-side {
+        display: none;
+    }
+
+
+    .intro {
+        grid-template-columns: 1fr;
+
+        padding: 100px 7vw;
+    }
+
+
+    .intro-label {
+        margin-bottom: 30px;
+    }
+
+
+    .intro-content h2 {
+        font-size: 55px;
+    }
+
+
+    .residences {
+        padding: 100px 6vw;
+    }
+
+
+    .section-heading {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+
+    .section-heading h2 {
+        font-size: 58px;
+    }
+
+
+    .residence-large .residence-visual,
+    .residence-visual {
+        min-height: 430px;
+    }
+
+
+    .residence-info {
+        flex-direction: column;
+    }
+
+
+    .residence-details {
+        align-items: flex-start;
+    }
+
+
+    .philosophy {
+        min-height: 620px;
+
+        padding: 100px 7vw;
+    }
+
+
+    .philosophy-content h2 {
+        font-size: 67px;
+    }
+
+
+    .gallery-preview {
+        min-height: 540px;
+
+        padding: 100px 7vw;
+
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+
+    .gallery-heading h2 {
+        font-size: 72px;
+    }
+
+
+    .viewing {
+        min-height: 560px;
+
+        padding: 100px 7vw;
+    }
+
+
+    .viewing-content h2 {
+        font-size: 72px;
+    }
+
+
+    .contact {
+        grid-template-columns: 1fr;
+
+        padding: 100px 7vw;
+
+        gap: 60px;
+    }
+
+
+    .contact-heading h2 {
+        font-size: 72px;
+    }
+
+
+    footer {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+}
+
+
+@media (max-width: 480px) {
+
+    .loader-brand {
+        font-size: 40px;
+
+        letter-spacing: 7px;
+    }
+
+
+    .hero h1 {
+        font-size: 55px;
+    }
+
+
+    .button {
+        width: 100%;
+    }
+
+
+    .intro-content h2 {
+        font-size: 48px;
+    }
+
+
+    .residence-large .residence-visual,
+    .residence-visual {
+        min-height: 360px;
+    }
+
+
+    .philosophy-content h2 {
+        font-size: 55px;
+    }
+
+
+    .stats {
+        grid-template-columns: 1fr;
+    }
+
+
+    .stat {
+        border-right: 0;
+
+        border-bottom: 1px solid rgba(0,0,0,0.15);
+    }
+
+
+    .stat:last-child {
+        border-bottom: 0;
+    }
+
+
+    .gallery-heading h2,
+    .viewing-content h2,
+    .contact-heading h2 {
+        font-size: 57px;
+    }
+
+
+    .contact-details a {
+        font-size: 23px;
+    }
+
+}
