@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="AURELIS — Private residences and extraordinary architecture."
+    >
+
+    <title>AURELIS — Private Residences</title>
+
+    <!-- Google Fonts -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Stylesheet -->
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <!-- =========================
+         LOADER
+    ========================== -->
+
+    <div class="loader" id="loader">
+
+        <div class="loader-brand">
+            AURELIS
+        </div>
+
+        <div class="loader-line">
+            <span></span>
+        </div>
+
+        <p>
+            PRIVATE RESIDENCES
+        </p>
+
+    </div>
+
+
+    <!-- =========================
+         NAVIGATION
+    ========================== -->
+
+    <header class="site-header" id="siteHeader">
+
+        <a href="#home" class="brand">
+            AURELIS
+        </a>
+
+        <nav class="main-nav" id="mainNav">
+
+            <a href="#home">
+                Home
+            </a>
+
+            <a href="#residences">
+                Residences
+            </a>
+
+            <a href="#philosophy">
+                Philosophy
+            </a>
+
+            <a href="#gallery">
+                Gallery
+            </a>
+
+            <a href="#contact">
+                Contact
+            </a>
+
+        </nav>
+
+        <a href="#viewing" class="nav-cta">
+            Private Viewing
+        </a>
+
+        <button
+            class="menu-toggle"
+            id="menuToggle"
+            type="button"
+            aria-label="Open navigation"
+            aria-expanded="false"
+        >
+            <span></span>
+            <span></span>
+        </button>
+
+    </header>
+
+
+    <main>
+
+        <!-- =========================
+             HERO
+        ========================== -->
+
+        <section class="hero" id="home">
+
+            <div class="hero-image">
+
+                <img
+                    src="images/hero.jpg"
+                    alt="Luxury architectural residence"
+                >
+
+            </div>
+
+            <div class="hero-overlay"></div>
+
+            <div class="hero-content">
+
+                <p class="eyebrow">
+                    PRIVATE RESIDENCES
+                </p>
+
+                <h1>
+                    Where Architecture
+                    <br>
+                    Becomes a Lifestyle.
+                </h1>
+
+                <p class="hero-description">
+
+                    A curated collection of extraordinary residences
+                    shaped by architecture, craftsmanship and timeless design.
+
+                </p>
+
+                <div class="hero-actions">
+
+                    <a href="#residences" class="button button-light">
+                        Explore Residences
+                    </a>
+
+                    <a href="#philosophy" class="text-link">
+                        Discover AURELIS
+                        <span>↘</span>
+                    </a>
+
+                </div>
+
+            </div>
+
+            <div class="hero-meta">
+
+                <span>
+                    EST. 2026
+                </span>
+
+                <span>
+                    CURATED LIVING
+                </span>
+
+            </div>
+
+            <a href="#residences" class="scroll-indicator">
+
+                <span>
+                    SCROLL TO DISCOVER
+                </span>
+
+                <strong>
+                    ↓
+                </strong>
+
+            </a>
+
+        </section>
+
+
+        <!-- =========================
+             INTRO
+        ========================== -->
+
+        <section class="intro">
+
+            <div class="intro-label">
+                01 / THE COLLECTION
+            </div>
+
+            <div class="intro-content">
+
+                <p class="eyebrow">
+                    A NEW STANDARD OF LIVING
+                </p>
+
+                <h2>
+                    Not simply a residence.
+                    <em>A statement.</em>
+                </h2>
+
+                <p class="intro-text">
+
+                    AURELIS brings together exceptional homes,
+                    remarkable architecture and considered interiors
+                    for people who believe where you live should reflect
+                    how you live.
+
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             RESIDENCES
+        ========================== -->
+
+        <section class="residences" id="residences">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <p class="eyebrow">
+                        THE COLLECTION
+                    </p>
+
+                    <h2>
+                        Selected Residences
+                    </h2>
+
+                </div>
+
+                <a href="#" class="text-link dark-link">
+                    View All Residences
+                    <span>↗</span>
+                </a>
+
+            </div>
+
+
+            <div class="residence-grid">
+
+                <!-- Residence 01 -->
+
+                <article class="residence-card residence-large">
+
+                    <a href="#" class="residence-image">
+
+                        <img
+                            src="images/residence1.jpg"
+                            alt="Modern luxury villa"
+                        >
+
+                        <span class="card-number">
+                            01
+                        </span>
+
+                        <span class="card-arrow">
+                            ↗
+                        </span>
+
+                    </a>
+
+                    <div class="residence-info">
+
+                        <div>
+
+                            <p class="location">
+                                ALIBAUG · MAHARASHTRA
+                            </p>
+
+                            <h3>
+                                Casa Aurelia
+                            </h3>
+
+                        </div>
+
+                        <div class="residence-details">
+
+                            <span>
+                                5 BED
+                            </span>
+
+                            <span>
+                                6 BATH
+                            </span>
+
+                            <span>
+                                6,800 SQ FT
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- Residence 02 -->
+
+                <article class="residence-card">
+
+                    <a href="#" class="residence-image">
+
+                        <img
+                            src="images/residence2.jpg"
+                            alt="Contemporary luxury residence"
+                        >
+
+                        <span class="card-number">
+                            02
+                        </span>
+
+                        <span class="card-arrow">
+                            ↗
+                        </span>
+
+                    </a>
+
+                    <div class="residence-info">
+
+                        <div>
+
+                            <p class="location">
+                                GOA · INDIA
+                            </p>
+
+                            <h3>
+                                Villa Solara
+                            </h3>
+
+                        </div>
+
+                        <div class="residence-details">
+
+                            <span>
+                                4 BED
+                            </span>
+
+                            <span>
+                                5 BATH
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- Residence 03 -->
+
+                <article class="residence-card">
+
+                    <a href="#" class="residence-image">
+
+                        <img
+                            src="images/residence3.jpg"
+                            alt="Luxury penthouse"
+                        >
+
+                        <span class="card-number">
+                            03
+                        </span>
+
+                        <span class="card-arrow">
+                            ↗
+                        </span>
+
+                    </a>
+
+                    <div class="residence-info">
+
+                        <div>
+
+                            <p class="location">
+                                MUMBAI · INDIA
+                            </p>
+
+                            <h3>
+                                The Aurelis Penthouse
+                            </h3>
+
+                        </div>
+
+                        <div class="residence-details">
+
+                            <span>
+                                4 BED
+                            </span>
+
+                            <span>
+                                5,200 SQ FT
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             PHILOSOPHY
+        ========================== -->
+
+        <section class="philosophy" id="philosophy">
+
+            <div class="philosophy-number">
+                02
+            </div>
+
+            <div class="philosophy-content">
+
+                <p class="eyebrow">
+                    OUR PHILOSOPHY
+                </p>
+
+                <h2>
+                    Designed for
+                    <em>those who notice</em>
+                    the difference.
+                </h2>
+
+                <p>
+
+                    From the first architectural line to the final
+                    material detail, every AURELIS residence is chosen
+                    for its ability to create a distinctive way of living.
+
+                </p>
+
+                <a href="#gallery" class="button button-dark">
+                    Explore Our Vision
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             STATS
+        ========================== -->
+
+        <section class="stats">
+
+            <div class="stat">
+
+                <strong>
+                    12
+                </strong>
+
+                <span>
+                    Curated Residences
+                </span>
+
+            </div>
+
+            <div class="stat">
+
+                <strong>
+                    08
+                </strong>
+
+                <span>
+                    Architectural Partners
+                </span>
+
+            </div>
+
+            <div class="stat">
+
+                <strong>
+                    04
+                </strong>
+
+                <span>
+                    Signature Locations
+                </span>
+
+            </div>
+
+            <div class="stat">
+
+                <strong>
+                    01
+                </strong>
+
+                <span>
+                    Extraordinary Standard
+                </span>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             GALLERY PLACEHOLDER
+        ========================== -->
+
+        <section class="gallery-preview" id="gallery">
+
+            <div class="gallery-heading">
+
+                <p class="eyebrow">
+                    ARCHITECTURAL JOURNAL
+                </p>
+
+                <h2>
+                    Spaces with a soul.
+                </h2>
+
+            </div>
+
+            <div class="gallery-message">
+
+                <p>
+                    A curated visual archive of architecture,
+                    interiors and considered living.
+                </p>
+
+                <a href="#contact" class="text-link dark-link">
+                    Enter the Journal
+                    <span>↗</span>
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             PRIVATE VIEWING
+        ========================== -->
+
+        <section class="viewing" id="viewing">
+
+            <div class="viewing-content">
+
+                <p class="eyebrow">
+                    PRIVATE ACCESS
+                </p>
+
+                <h2>
+                    Experience it
+                    <em>in person.</em>
+                </h2>
+
+                <p>
+                    Arrange a private viewing with an AURELIS
+                    representative and discover a residence
+                    selected around your lifestyle.
+                </p>
+
+                <a href="#contact" class="button button-light">
+                    Request Private Viewing
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             CONTACT
+        ========================== -->
+
+        <section class="contact" id="contact">
+
+            <div class="contact-heading">
+
+                <p class="eyebrow">
+                    PRIVATE CONCIERGE
+                </p>
+
+                <h2>
+                    Begin your
+                    <em>next chapter.</em>
+                </h2>
+
+            </div>
+
+            <div class="contact-details">
+
+                <a href="mailto:concierge@aurelis.example">
+                    concierge@aurelis.example
+                </a>
+
+                <a href="tel:+919876543210">
+                    +91 98765 43210
+                </a>
+
+                <p>
+                    Mumbai · Goa · Alibaug
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+
+        <div class="footer-brand">
+            AURELIS
+        </div>
+
+        <p>
+            PRIVATE RESIDENCES
+        </p>
+
+        <span>
+            © 2026 AURELIS. ALL RIGHTS RESERVED.
+        </span>
+
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script src="app.js"></script>
+
+</body>
+
+</html>
