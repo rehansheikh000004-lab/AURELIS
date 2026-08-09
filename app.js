@@ -1,651 +1,392 @@
-<!DOCTYPE html>
-<html lang="en">
+/* =========================================================
+   AURELIS
+   COMPLETE JAVASCRIPT
+========================================================= */
 
-<head>
+document.addEventListener("DOMContentLoaded", function () {
 
-    <meta charset="UTF-8">
+    /* =========================
+       ELEMENTS
+    ========================= */
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+    const loader = document.getElementById("loader");
 
-    <meta
-        name="description"
-        content="AURELIS — Private residences and extraordinary architecture."
-    >
+    const header = document.getElementById("siteHeader");
 
-    <title>AURELIS — Private Residences</title>
+    const menuToggle =
+        document.getElementById("menuToggle");
 
-    <!-- Google Fonts -->
+    const mainNav =
+        document.getElementById("mainNav");
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    const navLinks =
+        document.querySelectorAll(".main-nav a");
 
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    const revealElements =
+        document.querySelectorAll(".reveal");
 
-    <link
-        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
-        rel="stylesheet"
-    >
+    const philosophy =
+        document.querySelector(".philosophy");
 
-    <!-- Stylesheet -->
 
-    <link rel="stylesheet" href="style.css">
+    /* =========================
+       BODY LOCK
+    ========================= */
 
-</head>
+    document.body.classList.add("no-scroll");
 
-<body>
 
-    <!-- =========================
-         LOADER
-    ========================== -->
+    /* =========================
+       LOADER
+    ========================= */
 
-    <div class="loader" id="loader">
+    window.addEventListener("load", function () {
 
-        <div class="loader-brand">
-            AURELIS
-        </div>
+        setTimeout(function () {
 
-        <div class="loader-line">
-            <span></span>
-        </div>
+            if (loader) {
+                loader.classList.add("hidden");
+            }
 
-        <p>
-            PRIVATE RESIDENCES
-        </p>
+            document.body.classList.remove("no-scroll");
 
-    </div>
+        }, 1700);
 
+    });
 
-    <!-- =========================
-         NAVIGATION
-    ========================== -->
 
-    <header class="site-header" id="siteHeader">
+    /* =========================
+       HEADER SCROLL
+    ========================= */
 
-        <a href="#home" class="brand">
-            AURELIS
-        </a>
+    function updateHeader() {
 
-        <nav class="main-nav" id="mainNav">
+        if (!header) {
+            return;
+        }
 
-            <a href="#home">
-                Home
-            </a>
+        if (window.scrollY > 50) {
 
-            <a href="#residences">
-                Residences
-            </a>
+            header.classList.add("scrolled");
 
-            <a href="#philosophy">
-                Philosophy
-            </a>
+        } else {
 
-            <a href="#gallery">
-                Gallery
-            </a>
+            header.classList.remove("scrolled");
 
-            <a href="#contact">
-                Contact
-            </a>
+        }
 
-        </nav>
+    }
 
-        <a href="#viewing" class="nav-cta">
-            Private Viewing
-        </a>
 
-        <button
-            class="menu-toggle"
-            id="menuToggle"
-            type="button"
-            aria-label="Open navigation"
-            aria-expanded="false"
-        >
-            <span></span>
-            <span></span>
-        </button>
+    window.addEventListener(
+        "scroll",
+        updateHeader,
+        { passive: true }
+    );
 
-    </header>
 
+    updateHeader();
 
-    <main>
 
-        <!-- =========================
-             HERO
-        ========================== -->
+    /* =========================
+       MOBILE MENU
+    ========================= */
 
-        <section class="hero" id="home">
+    if (menuToggle && mainNav) {
 
-            <div class="hero-image">
+        menuToggle.addEventListener(
+            "click",
+            function () {
 
-                <img
-                    src="images/hero.jpg"
-                    alt="Luxury architectural residence"
-                >
+                const open =
+                    mainNav.classList.toggle("open");
 
-            </div>
+                menuToggle.setAttribute(
+                    "aria-expanded",
+                    open ? "true" : "false"
+                );
 
-            <div class="hero-overlay"></div>
+            }
+        );
 
-            <div class="hero-content">
+    }
 
-                <p class="eyebrow">
-                    PRIVATE RESIDENCES
-                </p>
 
-                <h1>
-                    Where Architecture
-                    <br>
-                    Becomes a Lifestyle.
-                </h1>
+    /* =========================
+       CLOSE MOBILE MENU
+    ========================= */
 
-                <p class="hero-description">
+    navLinks.forEach(function (link) {
 
-                    A curated collection of extraordinary residences
-                    shaped by architecture, craftsmanship and timeless design.
+        link.addEventListener(
+            "click",
+            function () {
 
-                </p>
+                if (mainNav) {
 
-                <div class="hero-actions">
+                    mainNav.classList.remove("open");
 
-                    <a href="#residences" class="button button-light">
-                        Explore Residences
-                    </a>
+                }
 
-                    <a href="#philosophy" class="text-link">
-                        Discover AURELIS
-                        <span>↘</span>
-                    </a>
+                if (menuToggle) {
 
-                </div>
+                    menuToggle.setAttribute(
+                        "aria-expanded",
+                        "false"
+                    );
 
-            </div>
+                }
 
-            <div class="hero-meta">
+            }
+        );
 
-                <span>
-                    EST. 2026
-                </span>
+    });
 
-                <span>
-                    CURATED LIVING
-                </span>
 
-            </div>
+    /* =========================
+       ESCAPE KEY
+    ========================= */
 
-            <a href="#residences" class="scroll-indicator">
+    document.addEventListener(
+        "keydown",
+        function (event) {
 
-                <span>
-                    SCROLL TO DISCOVER
-                </span>
+            if (event.key === "Escape") {
 
-                <strong>
-                    ↓
-                </strong>
+                if (mainNav) {
+                    mainNav.classList.remove("open");
+                }
 
-            </a>
+                if (menuToggle) {
 
-        </section>
+                    menuToggle.setAttribute(
+                        "aria-expanded",
+                        "false"
+                    );
 
+                }
 
-        <!-- =========================
-             INTRO
-        ========================== -->
+            }
 
-        <section class="intro">
+        }
+    );
 
-            <div class="intro-label">
-                01 / THE COLLECTION
-            </div>
 
-            <div class="intro-content">
+    /* =========================
+       SCROLL REVEAL
+    ========================= */
 
-                <p class="eyebrow">
-                    A NEW STANDARD OF LIVING
-                </p>
+    if ("IntersectionObserver" in window) {
 
-                <h2>
-                    Not simply a residence.
-                    <em>A statement.</em>
-                </h2>
+        const observer =
+            new IntersectionObserver(
+                function (entries, observerInstance) {
 
-                <p class="intro-text">
+                    entries.forEach(
+                        function (entry) {
 
-                    AURELIS brings together exceptional homes,
-                    remarkable architecture and considered interiors
-                    for people who believe where you live should reflect
-                    how you live.
+                            if (
+                                entry.isIntersecting
+                            ) {
 
-                </p>
+                                entry.target.classList.add(
+                                    "visible"
+                                );
 
-            </div>
+                                observerInstance.unobserve(
+                                    entry.target
+                                );
 
-        </section>
+                            }
 
+                        }
+                    );
 
-        <!-- =========================
-             RESIDENCES
-        ========================== -->
+                },
+                {
+                    threshold: 0.12
+                }
+            );
 
-        <section class="residences" id="residences">
 
-            <div class="section-heading">
+        revealElements.forEach(
+            function (element) {
 
-                <div>
+                observer.observe(element);
 
-                    <p class="eyebrow">
-                        THE COLLECTION
-                    </p>
+            }
+        );
 
-                    <h2>
-                        Selected Residences
-                    </h2>
+    } else {
 
-                </div>
+        revealElements.forEach(
+            function (element) {
 
-                <a href="#" class="text-link dark-link">
-                    View All Residences
-                    <span>↗</span>
-                </a>
+                element.classList.add("visible");
 
-            </div>
+            }
+        );
 
+    }
 
-            <div class="residence-grid">
 
-                <!-- Residence 01 -->
+    /* =========================
+       SMOOTH SCROLL
+    ========================= */
 
-                <article class="residence-card residence-large">
+    const internalLinks =
+        document.querySelectorAll(
+            'a[href^="#"]'
+        );
 
-                    <a href="#" class="residence-image">
 
-                        <img
-                            src="images/residence1.jpg"
-                            alt="Modern luxury villa"
-                        >
+    internalLinks.forEach(
+        function (link) {
 
-                        <span class="card-number">
-                            01
-                        </span>
+            link.addEventListener(
+                "click",
+                function (event) {
 
-                        <span class="card-arrow">
-                            ↗
-                        </span>
+                    const targetId =
+                        link.getAttribute("href");
 
-                    </a>
 
-                    <div class="residence-info">
+                    if (
+                        !targetId ||
+                        targetId === "#"
+                    ) {
 
-                        <div>
+                        return;
 
-                            <p class="location">
-                                ALIBAUG · MAHARASHTRA
-                            </p>
+                    }
 
-                            <h3>
-                                Casa Aurelia
-                            </h3>
 
-                        </div>
+                    const target =
+                        document.querySelector(targetId);
 
-                        <div class="residence-details">
 
-                            <span>
-                                5 BED
-                            </span>
+                    if (!target) {
 
-                            <span>
-                                6 BATH
-                            </span>
+                        return;
 
-                            <span>
-                                6,800 SQ FT
-                            </span>
+                    }
 
-                        </div>
 
-                    </div>
+                    event.preventDefault();
 
-                </article>
 
+                    target.scrollIntoView({
+                        behavior: "smooth",
+                        block: "start"
+                    });
 
-                <!-- Residence 02 -->
+                }
+            );
 
-                <article class="residence-card">
+        }
+    );
 
-                    <a href="#" class="residence-image">
 
-                        <img
-                            src="images/residence2.jpg"
-                            alt="Contemporary luxury residence"
-                        >
+    /* =========================
+       PHILOSOPHY MOUSE EFFECT
+    ========================= */
 
-                        <span class="card-number">
-                            02
-                        </span>
+    if (
+        philosophy &&
+        window.matchMedia(
+            "(min-width: 900px)"
+        ).matches
+    ) {
 
-                        <span class="card-arrow">
-                            ↗
-                        </span>
+        philosophy.addEventListener(
+            "mousemove",
+            function (event) {
 
-                    </a>
+                const rect =
+                    philosophy.getBoundingClientRect();
 
-                    <div class="residence-info">
 
-                        <div>
+                const x =
+                    event.clientX - rect.left;
 
-                            <p class="location">
-                                GOA · INDIA
-                            </p>
 
-                            <h3>
-                                Villa Solara
-                            </h3>
+                const y =
+                    event.clientY - rect.top;
 
-                        </div>
 
-                        <div class="residence-details">
+                const moveX =
+                    (x / rect.width - 0.5) * 18;
 
-                            <span>
-                                4 BED
-                            </span>
 
-                            <span>
-                                5 BATH
-                            </span>
+                const moveY =
+                    (y / rect.height - 0.5) * 18;
 
-                        </div>
 
-                    </div>
+                philosophy.style.setProperty(
+                    "--mouse-x",
+                    moveX + "px"
+                );
 
-                </article>
 
+                philosophy.style.setProperty(
+                    "--mouse-y",
+                    moveY + "px"
+                );
 
-                <!-- Residence 03 -->
+            }
+        );
 
-                <article class="residence-card">
 
-                    <a href="#" class="residence-image">
+        philosophy.addEventListener(
+            "mouseleave",
+            function () {
 
-                        <img
-                            src="images/residence3.jpg"
-                            alt="Luxury penthouse"
-                        >
+                philosophy.style.setProperty(
+                    "--mouse-x",
+                    "0px"
+                );
 
-                        <span class="card-number">
-                            03
-                        </span>
+                philosophy.style.setProperty(
+                    "--mouse-y",
+                    "0px"
+                );
 
-                        <span class="card-arrow">
-                            ↗
-                        </span>
+            }
+        );
 
-                    </a>
+    }
 
-                    <div class="residence-info">
 
-                        <div>
+    /* =========================
+       RESIZE
+    ========================= */
 
-                            <p class="location">
-                                MUMBAI · INDIA
-                            </p>
+    window.addEventListener(
+        "resize",
+        function () {
 
-                            <h3>
-                                The Aurelis Penthouse
-                            </h3>
+            if (
+                window.innerWidth > 700 &&
+                mainNav
+            ) {
 
-                        </div>
+                mainNav.classList.remove(
+                    "open"
+                );
 
-                        <div class="residence-details">
+            }
 
-                            <span>
-                                4 BED
-                            </span>
+            if (menuToggle) {
 
-                            <span>
-                                5,200 SQ FT
-                            </span>
+                menuToggle.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
 
-                        </div>
+            }
 
-                    </div>
+        }
+    );
 
-                </article>
 
-            </div>
-
-        </section>
-
-
-        <!-- =========================
-             PHILOSOPHY
-        ========================== -->
-
-        <section class="philosophy" id="philosophy">
-
-            <div class="philosophy-number">
-                02
-            </div>
-
-            <div class="philosophy-content">
-
-                <p class="eyebrow">
-                    OUR PHILOSOPHY
-                </p>
-
-                <h2>
-                    Designed for
-                    <em>those who notice</em>
-                    the difference.
-                </h2>
-
-                <p>
-
-                    From the first architectural line to the final
-                    material detail, every AURELIS residence is chosen
-                    for its ability to create a distinctive way of living.
-
-                </p>
-
-                <a href="#gallery" class="button button-dark">
-                    Explore Our Vision
-                </a>
-
-            </div>
-
-        </section>
-
-
-        <!-- =========================
-             STATS
-        ========================== -->
-
-        <section class="stats">
-
-            <div class="stat">
-
-                <strong>
-                    12
-                </strong>
-
-                <span>
-                    Curated Residences
-                </span>
-
-            </div>
-
-            <div class="stat">
-
-                <strong>
-                    08
-                </strong>
-
-                <span>
-                    Architectural Partners
-                </span>
-
-            </div>
-
-            <div class="stat">
-
-                <strong>
-                    04
-                </strong>
-
-                <span>
-                    Signature Locations
-                </span>
-
-            </div>
-
-            <div class="stat">
-
-                <strong>
-                    01
-                </strong>
-
-                <span>
-                    Extraordinary Standard
-                </span>
-
-            </div>
-
-        </section>
-
-
-        <!-- =========================
-             GALLERY PLACEHOLDER
-        ========================== -->
-
-        <section class="gallery-preview" id="gallery">
-
-            <div class="gallery-heading">
-
-                <p class="eyebrow">
-                    ARCHITECTURAL JOURNAL
-                </p>
-
-                <h2>
-                    Spaces with a soul.
-                </h2>
-
-            </div>
-
-            <div class="gallery-message">
-
-                <p>
-                    A curated visual archive of architecture,
-                    interiors and considered living.
-                </p>
-
-                <a href="#contact" class="text-link dark-link">
-                    Enter the Journal
-                    <span>↗</span>
-                </a>
-
-            </div>
-
-        </section>
-
-
-        <!-- =========================
-             PRIVATE VIEWING
-        ========================== -->
-
-        <section class="viewing" id="viewing">
-
-            <div class="viewing-content">
-
-                <p class="eyebrow">
-                    PRIVATE ACCESS
-                </p>
-
-                <h2>
-                    Experience it
-                    <em>in person.</em>
-                </h2>
-
-                <p>
-                    Arrange a private viewing with an AURELIS
-                    representative and discover a residence
-                    selected around your lifestyle.
-                </p>
-
-                <a href="#contact" class="button button-light">
-                    Request Private Viewing
-                </a>
-
-            </div>
-
-        </section>
-
-
-        <!-- =========================
-             CONTACT
-        ========================== -->
-
-        <section class="contact" id="contact">
-
-            <div class="contact-heading">
-
-                <p class="eyebrow">
-                    PRIVATE CONCIERGE
-                </p>
-
-                <h2>
-                    Begin your
-                    <em>next chapter.</em>
-                </h2>
-
-            </div>
-
-            <div class="contact-details">
-
-                <a href="mailto:concierge@aurelis.example">
-                    concierge@aurelis.example
-                </a>
-
-                <a href="tel:+919876543210">
-                    +91 98765 43210
-                </a>
-
-                <p>
-                    Mumbai · Goa · Alibaug
-                </p>
-
-            </div>
-
-        </section>
-
-    </main>
-
-
-    <!-- =========================
-         FOOTER
-    ========================== -->
-
-    <footer>
-
-        <div class="footer-brand">
-            AURELIS
-        </div>
-
-        <p>
-            PRIVATE RESIDENCES
-        </p>
-
-        <span>
-            © 2026 AURELIS. ALL RIGHTS RESERVED.
-        </span>
-
-    </footer>
-
-
-    <!-- JAVASCRIPT -->
-
-    <script src="app.js"></script>
-
-</body>
-
-</html>
+});
