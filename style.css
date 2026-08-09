@@ -649,3 +649,28 @@
 </body>
 
 </html>
+
+/* =========================
+   JAVASCRIPT ENHANCEMENTS
+========================= */
+
+.philosophy::before {
+    transform:
+        translate(
+            var(--mouse-x, 0px),
+            var(--mouse-y, 0px)
+        );
+
+    transition: transform 0.2s ease-out;
+}
+
+.residence-card {
+    transition:
+        opacity 0.9s ease,
+        transform 0.9s ease,
+        box-shadow 0.4s ease;
+}
+
+.residence-card.visible:hover {
+    transform: translateY(-6px);
+}
