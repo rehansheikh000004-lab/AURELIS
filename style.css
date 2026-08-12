@@ -1801,3 +1801,431 @@ footer span {
     }
 
 }
+
+/* =================================
+   PROPERTY EXPLORER MODAL
+================================= */
+
+.property-modal {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 5000;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 30px;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    pointer-events: none;
+
+    transition:
+        opacity 0.4s ease,
+        visibility 0.4s ease;
+}
+
+
+.property-modal.open {
+    opacity: 1;
+
+    visibility: visible;
+
+    pointer-events: auto;
+}
+
+
+.property-modal-backdrop {
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        rgba(10, 9, 8, 0.82);
+
+    backdrop-filter: blur(18px);
+}
+
+
+.property-modal-box {
+    position: relative;
+
+    z-index: 2;
+
+    width: min(1050px, 95vw);
+
+    max-height: 90vh;
+
+    overflow: auto;
+
+    display: grid;
+
+    grid-template-columns: 0.9fr 1.1fr;
+
+    background: var(--cream);
+
+    color: var(--black);
+
+    box-shadow:
+        0 40px 120px rgba(0,0,0,0.55);
+
+    transform:
+        translateY(30px)
+        scale(0.97);
+
+    transition:
+        transform 0.5s cubic-bezier(.2,.8,.2,1);
+}
+
+
+.property-modal.open
+.property-modal-box {
+    transform:
+        translateY(0)
+        scale(1);
+}
+
+
+.property-close {
+    position: absolute;
+
+    z-index: 5;
+
+    top: 18px;
+    right: 18px;
+
+    width: 44px;
+    height: 44px;
+
+    border: 1px solid rgba(255,255,255,0.45);
+
+    border-radius: 50%;
+
+    background:
+        rgba(0,0,0,0.3);
+
+    color: white;
+
+    font-size: 25px;
+
+    line-height: 1;
+
+    cursor: pointer;
+
+    backdrop-filter: blur(10px);
+
+    transition: 0.3s ease;
+}
+
+
+.property-close:hover {
+    background: var(--gold);
+
+    color: var(--black);
+
+    border-color: var(--gold);
+
+    transform: rotate(90deg);
+}
+
+
+/* Modal visual */
+
+.property-modal-visual {
+    position: relative;
+
+    min-height: 600px;
+
+    overflow: hidden;
+
+    display: flex;
+
+    align-items: flex-end;
+
+    padding: 30px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #696153,
+            #28251f 55%,
+            #11100e
+        );
+}
+
+
+.property-modal-visual::before {
+    content: "";
+
+    position: absolute;
+
+    width: 130%;
+
+    height: 1px;
+
+    left: -15%;
+
+    top: 38%;
+
+    background:
+        rgba(255,255,255,0.13);
+
+    box-shadow:
+        0 80px 0 rgba(255,255,255,0.1),
+        0 160px 0 rgba(255,255,255,0.07),
+        0 240px 0 rgba(255,255,255,0.05);
+
+    transform: rotate(-12deg);
+}
+
+
+.property-modal-visual::after {
+    content: "";
+
+    position: absolute;
+
+    width: 1px;
+
+    height: 130%;
+
+    left: 48%;
+
+    top: -15%;
+
+    background:
+        rgba(255,255,255,0.11);
+
+    box-shadow:
+        110px 0 0 rgba(255,255,255,0.08),
+        220px 0 0 rgba(255,255,255,0.05);
+
+    transform: rotate(16deg);
+}
+
+
+.property-modal-visual span {
+    position: relative;
+
+    z-index: 2;
+
+    color: rgba(255,255,255,0.7);
+
+    font-size: 9px;
+
+    letter-spacing: 3px;
+}
+
+
+/* Modal content */
+
+.property-modal-content {
+    padding: 65px 55px;
+}
+
+
+.property-modal-content h2 {
+    margin-top: 15px;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: clamp(50px, 5vw, 75px);
+
+    font-weight: 500;
+
+    line-height: 0.9;
+}
+
+
+.property-price {
+    margin-top: 18px;
+
+    color: var(--gold);
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: 30px;
+}
+
+
+.property-description {
+    max-width: 480px;
+
+    margin-top: 25px;
+
+    color: var(--muted);
+
+    font-size: 13px;
+
+    line-height: 2;
+}
+
+
+.property-specs {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    margin-top: 35px;
+
+    border-top:
+        1px solid var(--line);
+
+    border-bottom:
+        1px solid var(--line);
+}
+
+
+.property-specs div {
+    padding: 22px 10px;
+
+    border-right:
+        1px solid var(--line);
+}
+
+
+.property-specs div:last-child {
+    border-right: 0;
+}
+
+
+.property-specs strong {
+    display: block;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: 32px;
+
+    font-weight: 500;
+}
+
+
+.property-specs span {
+    display: block;
+
+    margin-top: 5px;
+
+    color: var(--muted);
+
+    font-size: 8px;
+
+    letter-spacing: 1.5px;
+
+    text-transform: uppercase;
+}
+
+
+.property-amenities {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+    margin: 25px 0 35px;
+}
+
+
+.property-amenities span {
+    padding: 9px 12px;
+
+    border: 1px solid var(--line);
+
+    color: var(--muted);
+
+    font-size: 8px;
+
+    letter-spacing: 1px;
+
+    text-transform: uppercase;
+}
+
+
+.property-modal-content
+.button {
+    width: auto;
+}
+
+
+/* =================================
+   MODAL MOBILE
+================================= */
+
+@media (max-width: 800px) {
+
+    .property-modal {
+        padding: 15px;
+    }
+
+
+    .property-modal-box {
+        width: 100%;
+
+        max-height: 94vh;
+
+        grid-template-columns: 1fr;
+    }
+
+
+    .property-modal-visual {
+        min-height: 300px;
+    }
+
+
+    .property-modal-content {
+        padding: 40px 25px;
+    }
+
+
+    .property-modal-content h2 {
+        font-size: 55px;
+    }
+
+
+    .property-modal-content
+    .button {
+        width: 100%;
+    }
+
+}
+
+
+@media (max-width: 480px) {
+
+    .property-modal-visual {
+        min-height: 240px;
+    }
+
+
+    .property-modal-content {
+        padding: 35px 20px;
+    }
+
+
+    .property-modal-content h2 {
+        font-size: 48px;
+    }
+
+
+    .property-specs strong {
+        font-size: 27px;
+    }
+
+
+    .property-amenities span {
+        font-size: 7px;
+    }
+
+}
