@@ -36,24 +36,21 @@ document.addEventListener("DOMContentLoaded", function () {
     document.body.classList.add("no-scroll");
 
 
-    /* =========================
-       LOADER
-    ========================= */
+   /* =========================
+   LOADER
+========================= */
 
-    window.addEventListener("load", function () {
+window.addEventListener("load", function () {
 
-        setTimeout(function () {
+    if (loader) {
+        loader.classList.add("hidden");
+    }
 
-            if (loader) {
-                loader.classList.add("hidden");
-            }
+    document.body.classList.remove(
+        "no-scroll"
+    );
 
-            document.body.classList.remove("no-scroll");
-
-        }, 1700);
-
-    });
-
+});
 
     /* =========================
        HEADER SCROLL
