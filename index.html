@@ -614,61 +614,272 @@
         </section>
 
 
-        <!-- =================================
-             GALLERY
-        ================================== -->
+       <!-- =================================
+     CINEMATIC GALLERY
+================================== -->
 
-        <section
-            class="gallery-preview"
-            id="gallery"
+<section
+    class="luxury-gallery"
+    id="gallery"
+>
+
+    <div class="gallery-top reveal">
+
+        <div>
+
+            <p class="eyebrow">
+                A VISUAL JOURNEY
+            </p>
+
+            <h2>
+                Spaces
+                <br>
+                Worth
+                <em>Remembering.</em>
+            </h2>
+
+        </div>
+
+        <p class="gallery-intro">
+            Architecture, material and light
+            come together to create residences
+            designed to be experienced.
+        </p>
+
+    </div>
+
+
+    <div class="gallery-grid">
+
+
+        <button
+            class="gallery-item gallery-item-large reveal"
+            type="button"
+            data-gallery="0"
         >
 
-            <div class="gallery-heading reveal">
+            <div class="gallery-scene scene-01">
 
-                <p class="eyebrow">
-                    A VISUAL JOURNEY
-                </p>
+                <span class="scene-number">
+                    01
+                </span>
 
-                <h2>
-                    Space.
-                    <br>
-                    Light.
-                    <br>
-                    <em>Silence.</em>
-                </h2>
+                <span class="scene-title">
+                    THE ARRIVAL
+                </span>
 
-            </div>
-
-
-            <div class="gallery-message reveal">
-
-                <p>
-
-                    Explore a world where natural
-                    materials, sculptural forms and
-                    considered spaces create a distinct
-                    sense of place.
-
-                </p>
-
-
-                <a
-                    href="#contact"
-                    class="text-link dark-link"
-                >
-
-                    Enter Gallery
-
-                    <span>
-                        ↗
-                    </span>
-
-                </a>
+                <span class="scene-arrow">
+                    ↗
+                </span>
 
             </div>
 
-        </section>
+        </button>
 
+
+        <button
+            class="gallery-item reveal"
+            type="button"
+            data-gallery="1"
+        >
+
+            <div class="gallery-scene scene-02">
+
+                <span class="scene-number">
+                    02
+                </span>
+
+                <span class="scene-title">
+                    LIVING ROOM
+                </span>
+
+                <span class="scene-arrow">
+                    ↗
+                </span>
+
+            </div>
+
+        </button>
+
+
+        <button
+            class="gallery-item reveal"
+            type="button"
+            data-gallery="2"
+        >
+
+            <div class="gallery-scene scene-03">
+
+                <span class="scene-number">
+                    03
+                </span>
+
+                <span class="scene-title">
+                    PRIVATE DINING
+                </span>
+
+                <span class="scene-arrow">
+                    ↗
+                </span>
+
+            </div>
+
+        </button>
+
+
+        <button
+            class="gallery-item gallery-item-wide reveal"
+            type="button"
+            data-gallery="3"
+        >
+
+            <div class="gallery-scene scene-04">
+
+                <span class="scene-number">
+                    04
+                </span>
+
+                <span class="scene-title">
+                    THE COURTYARD
+                </span>
+
+                <span class="scene-arrow">
+                    ↗
+                </span>
+
+            </div>
+
+        </button>
+
+
+        <button
+            class="gallery-item reveal"
+            type="button"
+            data-gallery="4"
+        >
+
+            <div class="gallery-scene scene-05">
+
+                <span class="scene-number">
+                    05
+                </span>
+
+                <span class="scene-title">
+                    MASTER SUITE
+                </span>
+
+                <span class="scene-arrow">
+                    ↗
+                </span>
+
+            </div>
+
+        </button>
+
+
+        <button
+            class="gallery-item reveal"
+            type="button"
+            data-gallery="5"
+        >
+
+            <div class="gallery-scene scene-06">
+
+                <span class="scene-number">
+                    06
+                </span>
+
+                <span class="scene-title">
+                    NIGHTFALL
+                </span>
+
+                <span class="scene-arrow">
+                    ↗
+                </span>
+
+            </div>
+
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =================================
+     GALLERY LIGHTBOX
+================================== -->
+
+<div
+    class="gallery-lightbox"
+    id="galleryLightbox"
+    aria-hidden="true"
+>
+
+    <div
+        class="lightbox-backdrop"
+        id="lightboxBackdrop"
+    ></div>
+
+
+    <button
+        class="lightbox-close"
+        id="lightboxClose"
+        type="button"
+        aria-label="Close gallery"
+    >
+        ×
+    </button>
+
+
+    <button
+        class="lightbox-control lightbox-prev"
+        id="lightboxPrev"
+        type="button"
+        aria-label="Previous image"
+    >
+        ←
+    </button>
+
+
+    <div class="lightbox-content">
+
+        <div
+            class="lightbox-visual"
+            id="lightboxVisual"
+        ></div>
+
+
+        <div class="lightbox-caption">
+
+            <span id="lightboxCounter">
+                01 / 06
+            </span>
+
+            <h3 id="lightboxTitle">
+                THE ARRIVAL
+            </h3>
+
+            <p id="lightboxDescription">
+                A sculptural arrival experience
+                defined by stone, shadow and light.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <button
+        class="lightbox-control lightbox-next"
+        id="lightboxNext"
+        type="button"
+        aria-label="Next image"
+    >
+        →
+    </button>
+
+</div>
 
         <!-- =================================
              PRIVATE VIEWING
